@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75a693ea-aca5-4cbf-9780-c09c0f8c4138" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/searcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/searcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS121 P3M1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS121 P3M2.pdf" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +16,7 @@
     <session id="-409736613">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -36,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/indexer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1785">
-              <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
+              <caret line="105" selection-start-line="105" selection-end-line="105" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -47,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/searcher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -133,7 +136,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37975708" />
@@ -168,7 +170,7 @@
     <entry file="file://$PROJECT_DIR$/indexer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1785">
-          <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -177,8 +179,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/searcher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
