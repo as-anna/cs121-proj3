@@ -8,11 +8,11 @@ def main():
     ps = PorterStemmer()
     scores = {}
 
-    query = input("Enter search keywords: ")
-    query_tokens = word_tokenize(query)
-
     with open("inverted_index.txt", 'r') as f:
         uniques = json.loads(f.read())
+
+        query = input("Enter search keywords: ")
+        query_tokens = word_tokenize(query)
 
         for token in query_tokens:
             try:
