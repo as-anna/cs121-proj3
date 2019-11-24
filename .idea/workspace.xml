@@ -4,8 +4,7 @@
     <list default="true" id="75a693ea-aca5-4cbf-9780-c09c0f8c4138" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/indexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/indexer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inverted_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/inverted_index.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/page_index.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inverted_index_0.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +46,7 @@
       <updated>1574015344834</updated>
       <workItem from="1574573229976" duration="389000" />
       <workItem from="1574619309749" duration="4561000" />
-      <workItem from="1574624511280" duration="240000" />
+      <workItem from="1574624511280" duration="1635000" />
     </task>
     <servers />
   </component>

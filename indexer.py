@@ -10,6 +10,7 @@ import math
 from bs4 import BeautifulSoup
 
 important_word_weight = 2
+FILE_INDEX = 0
 page_index = {}
 ps = PorterStemmer()
 
@@ -27,9 +28,11 @@ def main():
 
 
 def write_inverted_to_file(sorted_uniques):
-    with open("inverted_index.txt", 'w') as our_index:
+    global FILE_INDEX
+    with open("inverted_index_%s.txt" % FILE_INDEX, 'w') as our_index:
         for chunk in json.JSONEncoder().iterencode(sorted_uniques):
             our_index.write(chunk)
+    FILE_INDEX += 1
 
 
 def scorer():
@@ -117,6 +120,13 @@ def indexer():
 
                 index += 1
                 print(index)
+
+                if sys.getsizeof(uniques) > 10000:
+                    write_inverted_to_file(sorted(uniques.items()))
+                    uniques.clear()
+
+
+
             # TODO: Remove this thing once done with testing 1 page
             # break
 
