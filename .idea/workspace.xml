@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="75a693ea-aca5-4cbf-9780-c09c0f8c4138" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/searcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/indexer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inverted_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/inverted_index.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/page_index.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +45,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574015344834</updated>
-      <workItem from="1574573229976" duration="262000" />
+      <workItem from="1574573229976" duration="389000" />
+      <workItem from="1574619309749" duration="4561000" />
+      <workItem from="1574624511280" duration="240000" />
     </task>
     <servers />
   </component>
@@ -55,7 +59,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

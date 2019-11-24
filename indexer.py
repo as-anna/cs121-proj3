@@ -6,23 +6,29 @@ import json
 from collections import defaultdict
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
 import math
+from bs4 import BeautifulSoup
 
+important_word_weight = 2
 page_index = {}
-stop_words = set(stopwords.words('english'))
 ps = PorterStemmer()
 
 
 def main():
     uniques = scorer()
 
+    sorted_uniques = sorted(uniques.items())
+
     with open("page_index.txt", 'w') as pages:
         for chunk in json.JSONEncoder().iterencode(page_index):
             pages.write(chunk)
 
+    write_inverted_to_file(sorted_uniques)
+
+
+def write_inverted_to_file(sorted_uniques):
     with open("inverted_index.txt", 'w') as our_index:
-        for chunk in json.JSONEncoder().iterencode(uniques):
+        for chunk in json.JSONEncoder().iterencode(sorted_uniques):
             our_index.write(chunk)
 
 
@@ -58,15 +64,39 @@ def indexer():
 
                 # Take the content from the json
                 page_content = json.load(open(page))['content']
-                t_tokens = page_content.strip().split()
+                t_tokens = page_content.strip()
+
+                soup = BeautifulSoup(page_content, "html.parser")
+                important = []
+                try:
+                    for word in soup.title.string.split():
+                        word = word.lower()
+                        if ps.stem(word) not in important and ps.stem(word).isalnum():
+                            important.append(ps.stem(word))
+                except:
+                    pass
+
+                for tag_texts in soup.find_all(["h1", "h2", "h3", "b"]):
+                    try:
+                        # print(tag_texts.string.split())
+                        taken_text = tag_texts.string.split()
+                        for text in taken_text:
+                            text = text.lower()
+                            if ps.stem(text) not in important and text.isalnum():
+                                important.append(ps.stem(text))
+                    except:
+                        pass
+
+                # print(important)
+
+                t_tokens = t_tokens.split()
+
                 tokens = [t for t in t_tokens if re.match(r'[^\W\d]*$', t)]
                 f_tokens = ' '.join(tokens)
 
                 nltk_tokens = word_tokenize(f_tokens)
 
                 for token in nltk_tokens:
-                    if token.lower() in stop_words:
-                        continue
 
                     token = token.lower()
                     token = ps.stem(token)
@@ -75,9 +105,13 @@ def indexer():
                     for posting in uniques[token]:
                         if index is posting[0]:
                             posting[1] += 1
+                            if token in important:
+                                posting[1] += important_word_weight
+                                # posting[2] += 1
                             break
                     else:
-                        uniques[token].append([index, 1, []])
+                        uniques[token].append([index, 1])
+                        # uniques[token].append([index, 1, 0])
 
                 print(page_url)
 
