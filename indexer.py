@@ -10,13 +10,16 @@ import math
 from bs4 import BeautifulSoup
 
 important_word_weight = 2
+breakpoints = [3000, 10000, 20000, 30000, 40000, 50000]
 FILE_INDEX = 0
 page_index = {}
 ps = PorterStemmer()
 
 
 def main():
-    uniques = scorer()
+    uniques, doc_count = indexer()
+    print(len(uniques))
+    print("doc_count: " + str(doc_count))
 
     sorted_uniques = sorted(uniques.items())
 
@@ -29,25 +32,22 @@ def main():
 
 def write_inverted_to_file(sorted_uniques):
     global FILE_INDEX
-    with open("inverted_index_%s.txt" % FILE_INDEX, 'w') as our_index:
-        for chunk in json.JSONEncoder().iterencode(sorted_uniques):
-            our_index.write(chunk)
+    print("Writing a partial index to file...")
+    with open("inverted_index_%s.txt" % FILE_INDEX, 'a') as our_index:
+        for key, values in sorted_uniques:
+            key_string = '{"' + key
+            try:
+                our_index.write(key_string)
+            except:
+                continue
+            our_index.write('": ')
+            json.dump(values, our_index)
+            # for chunk in json.JSONEncoder().iterencode(values):
+                # json.dump(chunk, our_index)
+            our_index.write("}\n")
+        # for chunk in json.JSONEncoder().iterencode(sorted_uniques):
+            # our_index.write(chunk)
     FILE_INDEX += 1
-
-
-def scorer():
-    uniques, doc_count = indexer()
-    print(len(uniques))
-    print("doc_count: " + str(doc_count))
-
-    for token in uniques:
-        df = len(uniques[token])
-        idf = math.log(doc_count/df)
-        for posting in uniques[token]:
-            this_tf_idf = (1 + math.log(posting[1])) * idf
-            posting[1] = round(this_tf_idf, 2)
-
-    return uniques
 
 
 def indexer():
@@ -121,11 +121,9 @@ def indexer():
                 index += 1
                 print(index)
 
-                if sys.getsizeof(uniques) > 10000:
+                if index in breakpoints:
                     write_inverted_to_file(sorted(uniques.items()))
                     uniques.clear()
-
-
 
             # TODO: Remove this thing once done with testing 1 page
             # break
@@ -136,9 +134,7 @@ def indexer():
                     for chunk in json.JSONEncoder().iterencode(page_index):
                         pages.write(chunk)
 
-                with open("inverted_index.txt", 'w') as our_index:
-                    for chunk in json.JSONEncoder().iterencode(uniques):
-                        our_index.write(chunk)
+                write_inverted_to_file(uniques)
 
                 quit()
 
