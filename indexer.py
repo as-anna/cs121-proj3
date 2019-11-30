@@ -6,10 +6,11 @@ import json
 from collections import defaultdict
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
-import math
 from bs4 import BeautifulSoup
 
+# Weight of important tags: title, headers, strong
 important_word_weight = 2
+# When reach these page indexes, write to a partial index and move on
 breakpoints = [3000, 10000, 20000, 30000, 40000, 50000]
 FILE_INDEX = 0
 page_index = {}
@@ -17,10 +18,12 @@ ps = PorterStemmer()
 
 
 def main():
+    # Returns unique tokens (unsorted) and the number of documents for that round
     uniques, doc_count = indexer()
     print(len(uniques))
     print("doc_count: " + str(doc_count))
 
+    # Sorting the tokens for quicker merging later on
     sorted_uniques = sorted(uniques.items())
 
     with open("page_index.txt", 'w') as pages:
@@ -33,6 +36,8 @@ def main():
 def write_inverted_to_file(sorted_uniques):
     global FILE_INDEX
     print("Writing a partial index to file...")
+
+    # Write to partial index- one key per line as one dictionary
     with open("inverted_index_%s.txt" % FILE_INDEX, 'a') as our_index:
         for key, values in sorted_uniques:
             key_string = '{"' + key
@@ -42,16 +47,13 @@ def write_inverted_to_file(sorted_uniques):
                 continue
             our_index.write('": ')
             json.dump(values, our_index)
-            # for chunk in json.JSONEncoder().iterencode(values):
-                # json.dump(chunk, our_index)
             our_index.write("}\n")
-        # for chunk in json.JSONEncoder().iterencode(sorted_uniques):
-            # our_index.write(chunk)
     FILE_INDEX += 1
 
 
 def indexer():
 
+    # page index
     index = 0
     uniques = defaultdict(list)
 
@@ -69,6 +71,7 @@ def indexer():
                 page_content = json.load(open(page))['content']
                 t_tokens = page_content.strip()
 
+                # Take tokens in important words and give them extra weight
                 soup = BeautifulSoup(page_content, "html.parser")
                 important = []
                 try:
@@ -90,8 +93,6 @@ def indexer():
                     except:
                         pass
 
-                # print(important)
-
                 t_tokens = t_tokens.split()
 
                 tokens = [t for t in t_tokens if re.match(r'[^\W\d]*$', t)]
@@ -100,7 +101,6 @@ def indexer():
                 nltk_tokens = word_tokenize(f_tokens)
 
                 for token in nltk_tokens:
-
                     token = token.lower()
                     token = ps.stem(token)
 
@@ -110,11 +110,9 @@ def indexer():
                             posting[1] += 1
                             if token in important:
                                 posting[1] += important_word_weight
-                                # posting[2] += 1
                             break
                     else:
                         uniques[token].append([index, 1])
-                        # uniques[token].append([index, 1, 0])
 
                 print(page_url)
 
