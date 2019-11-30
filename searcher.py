@@ -36,5 +36,9 @@ def main():
             index += 1
 
 
+def cosine_score():
+    pass
+
+
 if __name__ == '__main__':
     main()
