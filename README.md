@@ -1,16 +1,22 @@
-# cs121-proj3
+﻿# cs121-proj3
 UCI CS 121 - Project 3
 
-Goal: Implement a complete search engine.
+Steps to run this properly:
 
-✓ Indexer:  Create an inverted index for the given corpus with data structures designed by you. 
+1) `py indexer.py [file_path]`
+Input: file_path is the folder where the documents are. For example: Desktop/DEV/**
+Output: Produces many partial indexes (inverted_index_{}.txt).
 
-✓ Tokens: all alphanumeric sequences in the dataset.
+2) `py merger.py`
+Output: full_index.txt where all the partial indexes are merged and tf-idf is calculated.
 
-Stop words: do not use stopping, i.e. use all words, even the frequently occurring ones.
+3) `py cosine_dlower.py`
+Output: cosine_dlower.txt that contains a dictionary with key= doc_id, value= sum of tf_idf squared for all
+tokens that that document has. Will be used later for cosine scores.
 
-✓ Stemming: use stemming for better textual matches. Suggestion: Porter stemming.
+4) `py splitter.py`
+Output: Many split indexes (split_index/split_index_{}.txt) to make searching quicker.
 
-Important words: Words in bold, in headings (h1, h2, h3), and in titles should be treated as more important than the other words.
-
-Search: Your program should prompt the user for a query. This doesn’t need to be a Web interface, it can be a console prompt. At the time of the query, your program will stem the query terms, look up your index, perform some calculations (see ranking below) and give out the ranked list of pages that are relevant for the query, with the most relevant on top. Pages should be identified by their URLs.Ranking: at the very least, your ranking formula should include tf-idf scoring, and take the important words into consideration, but you should feel free to add additional components to this formula if you think they improve the retrieval.
+5) `py searcher.py`
+Input: Search query
+Output: Prints top results (page's url) for given query.

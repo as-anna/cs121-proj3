@@ -11,7 +11,12 @@ def main():
             line = fp.readline()
             if not line:
                 break
-            line_dict = json.loads(line)
+            # line_dict = json.loads(line)
+            if sys.argv[2] in line:
+                print(sys.argv[2])
+                print(line)
+                line_dict = json.loads(line)
+                # break
             i += 1
         print("Took: ", time.time() - start)
         print("Tokens: ", i)

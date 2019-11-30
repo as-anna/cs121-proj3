@@ -66,11 +66,11 @@ def scorer(token_dict):
         for posting in token_dict[token]:
             # tf = posting[1]
             tf_idf = (1 + math.log(posting[1])) * idf
-            posting[1] = round(tf_idf, 3)
+            posting[1] = tf_idf
 
         # To save some time and space, only return highest 20 tf_idf postings
         token_dict[token].sort(key=lambda x: x[1], reverse=True)
-        token_dict[token] = token_dict[token][0:20]
+        # token_dict[token] = token_dict[token][0:20]
 
     return token_dict
 
