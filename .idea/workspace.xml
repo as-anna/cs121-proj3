@@ -2,10 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75a693ea-aca5-4cbf-9780-c09c0f8c4138" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/indexer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inverted_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/inverted_index.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/page_index.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merger.py" beforeDir="false" afterPath="$PROJECT_DIR$/Merger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inverted_index_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/inverted_index_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inverted_index_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/inverted_index_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inverted_index_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/inverted_index_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inverted_index_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/inverted_index_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inverted_index_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/inverted_index_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inverted_index_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/inverted_index_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inverted_index_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/inverted_index_6.txt" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/full_index.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tester.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merger.py" beforeDir="false" afterPath="$PROJECT_DIR$/Merger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/searcher.py" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,11 +26,22 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1U36zIYEnDgebcCFPQE2ToOJURX" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -47,7 +71,17 @@
       <updated>1574015344834</updated>
       <workItem from="1574573229976" duration="389000" />
       <workItem from="1574619309749" duration="4561000" />
-      <workItem from="1574624511280" duration="240000" />
+      <workItem from="1574624511280" duration="2444000" />
+      <workItem from="1574823599278" duration="1760000" />
+      <workItem from="1574826961564" duration="246000" />
+      <workItem from="1574830805480" duration="71000" />
+      <workItem from="1574834807987" duration="7306000" />
+<<<<<<< Updated upstream
+      <workItem from="1574921552806" duration="3260000" />
+=======
+      <workItem from="1574921552806" duration="3329000" />
+      <workItem from="1575067822773" duration="6539000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -66,5 +100,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
