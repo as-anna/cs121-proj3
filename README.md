@@ -6,6 +6,7 @@ Steps to run this properly:
 1) `py indexer.py [file_path]`
 
 Input: file_path is the folder where the documents are. For example: Desktop/DEV/**
+
 Output: Produces many partial indexes (inverted_index_{}.txt).
 
 2) `py merger.py`
@@ -24,4 +25,5 @@ Output: Many split indexes (split_index/split_index_{}.txt) to make searching qu
 5) `py searcher.py`
 
 Input: Search query
+
 Output: Prints top results (page's url) for given query.
